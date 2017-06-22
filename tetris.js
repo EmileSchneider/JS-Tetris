@@ -30,4 +30,83 @@ function draw() {
    }       
 }   
 tetrisgrid = buildGrid(800,1200)
-draw();
+
+//How to define a new Class in JS
+
+function createClass(input) {
+  var obj = {};
+  obj.var = input;
+  obj.methode = function() {
+    doStu;ff
+  };
+  return obj;
+}
+
+//How do initiate an object
+
+var newObject = createClass('DATA');
+DATA.var;
+DATA.methode();
+
+
+function listOfLists(x,y) {
+	var obj = {};
+	obj.x = x;
+	obj.y = y;
+	
+	obj.listOfLists = [];
+	
+	obj.createListofLists = function () {
+		for (i = 0; i < obj.x; i++) {
+			var subList = [];				
+			for (j = 0; i < obj.y, j++) {
+				subList.push(0);				
+			}
+			obj.listOfLists.push(subList);
+		}
+	}	
+	return obj;
+}
+
+function matrix(x,y) {
+	var obj = {};
+	obj.x = x;
+	obj.y = y;
+	var newMatrix = listOfLists(x,y);
+	
+	//gibt aus ob Feld(x,y) 0 oder 1 ist
+	function returnXY(matrix,reqX, reqY) {
+		var zwischenSpeicher = matrix[reqX];
+		return zwischenSpeicher[reqY];
+	}
+	
+	//ueberschreibt den Wert rewX,rewY in der Matrix newMatrix 
+	function rewriteXY(newMatrix,rewX rewY, rewValue) {
+		var zwischenSpeicher = newMatrix[rewX];
+		zwischenSpeicher[rewY] = rewValue;
+		newMatrix[rewX] = zwischenSpeicher;
+		return newMatrix;	
+	}
+	
+	//verschiebt alle 1 Werte der Matrix um ein Y-Wert nach unten
+	function matrixShiftDown(newMatrix) {
+		for (i = 0; i < newMatrix.length; i++) {
+			for (j = 0; j < i.length; j++) {
+				if (returnXY(newMatrix,i,j) == 1 {
+					rewriteXY(newMatrix,i,j,0);
+					rewriteXY(newMatrix,i,j++,1);
+				}
+			}
+		}	
+		return(newMatrix);	
+	}
+}
+
+
+
+
+
+
+
+
+
